@@ -1,3 +1,5 @@
+FROM kamermans/jq:latest as jq
+
 FROM golang:1.9
 
 # gometalinter.v1
@@ -9,3 +11,6 @@ RUN go get -u github.com/axw/gocov/gocov
 
 # go-bindata
 RUN go get -u github.com/jteeuwen/go-bindata/...
+
+# jq
+COPY --from=jq /usr/local/bin/jq-1.5 /usr/local/bin
