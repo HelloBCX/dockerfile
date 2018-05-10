@@ -14,3 +14,6 @@ RUN go get -u github.com/jteeuwen/go-bindata/...
 
 # jq
 COPY --from=jq /usr/local/bin/jq-1.5 /usr/local/bin
+
+# moq
+RUN go get github.com/matryer/moq
