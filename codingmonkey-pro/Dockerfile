@@ -25,6 +25,14 @@ RUN docker-php-source extract \
     && make install \
     && touch /usr/local/etc/php/conf.d/php-ext-pcntl.ini \
     && echo extension=pcntl.so >> /usr/local/etc/php/conf.d/php-ext-pcntl.ini \
+    # pdo_mysql 扩展
+    && cd /usr/src/php/ext/pdo_mysql \
+    && phpize \
+    && ./configure --with-php-config=/usr/local/bin/php-config \
+    && make \
+    && make install \
+    && touch /usr/local/etc/php/conf.d/php-ext-pdo_mysql.ini \
+    && echo extension=pdo_mysql.so >> /usr/local/etc/php/conf.d/php-ext-pdo_mysql.ini \
     # zip 扩展
     && cd /usr/src/php/ext/zip \
     && phpize \
