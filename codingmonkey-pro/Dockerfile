@@ -1,4 +1,5 @@
-FROM php:7.1-apache
+FROM php:7.2-fpm
+ENV TZ 'Asia/Shanghai'
 RUN docker-php-source extract \
     # 安装 gd 扩展
     && cd /usr/src/php/ext/gd \
@@ -41,7 +42,7 @@ RUN docker-php-source extract \
     && make install \
     && touch /usr/local/etc/php/conf.d/php-ext-zip.ini \
     && echo extension=zip.so >> /usr/local/etc/php/conf.d/php-ext-zip.ini \
-    # 安装 扩展
+    # 安装bcmanth扩展
     && cd /usr/src/php/ext/bcmath \
     && phpize \
     && ./configure --with-php-config=/usr/local/bin/php-config \
