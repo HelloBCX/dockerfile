@@ -59,3 +59,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php \
     && php -r "unlink('composer-setup.php');" \
     && mv ./composer.phar /usr/local/bin/composer
+
+RUN mkdir -p /mnt/CodingMonkey/log \
+    && mkdir -p /mnt/CodingMonkey/run \
+    && mkdir -p /mnt/CodingMonkey/cache \
+    && mkdir -p /mnt/CodingMonkey/backup
