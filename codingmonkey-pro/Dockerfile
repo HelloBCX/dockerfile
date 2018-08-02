@@ -50,6 +50,15 @@ RUN docker-php-source extract \
     && make install \
     && touch /usr/local/etc/php/conf.d/php-ext-bcmath.ini \
     && echo extension=bcmath.so >> /usr/local/etc/php/conf.d/php-ext-bcmath.ini \
+	# 安装intl 扩展
+	&& apt-get update && apt-get install -y libicu-dev \
+	&& cd /usr/src/php/ext/intl \
+	&& phpize \
+	&& ./configure --with-php-config=/usr/local/bin/php-config \
+	&& make \
+	&& make install \
+	&& touch /usr/local/etc/php/conf.d/docker-php-ext-intl.ini \
+	&& echo extension=intl.so >> /usr/local/etc/php/conf.d/docker-php-ext-intl.ini \
     && docker-php-source delete \
     && pecl install mongodb  \
     && pecl install redis
