@@ -13,7 +13,7 @@
 
 例如安装gd
 ```
-cd ~/php-7.1.10/ext/gd
+cd /php-7.1.10/ext/gd
 && phpize
 && ./configure --with-php-config=/usr/local/bin/php-config
 && make
