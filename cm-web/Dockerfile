@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y wget make python gcc g++ \
     && make install
 
 RUN npm i npm@latest -g \
-	&& apt-get install -y autoconf  automake  libtool libffi-dev libpng-dev \
+	&& apt-get install -y git autoconf  automake  libtool libffi-dev libpng-dev \
 	&& wget http://ftp.cn.debian.org/debian/pool/main/libp/libpng/libpng12-0_1.2.49-1+deb7u2_amd64.deb \
     && apt-get install ./libpng12-0_1.2.49-1+deb7u2_amd64.deb
 
