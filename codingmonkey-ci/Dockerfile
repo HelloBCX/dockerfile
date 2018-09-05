@@ -9,3 +9,8 @@ RUN cd /php-7.1.10/ext/intl \
 && make install \
 && touch /usr/local/etc/php/conf.d/docker-php-ext-intl.ini \
 && echo extension=intl.so >> /usr/local/etc/php/conf.d/docker-php-ext-intl.ini
+
+RUN pecl install swoole
+
+RUN apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
