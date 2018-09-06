@@ -12,5 +12,8 @@ RUN cd /php-7.1.10/ext/intl \
 
 RUN pecl install swoole
 
+RUN touch /usr/local/etc/php/conf.d/docker-php-ext-swoole.ini \
+&& echo extension=swoole.so >> /usr/local/etc/php/conf.d/docker-php-ext-swoole.ini
+
 RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
