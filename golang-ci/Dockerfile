@@ -1,6 +1,6 @@
 FROM kamermans/jq:latest as jq
 
-FROM golang:1.9
+FROM golang:1.10
 
 # gometalinter.v1
 RUN go get -u gopkg.in/alecthomas/gometalinter.v1 \
