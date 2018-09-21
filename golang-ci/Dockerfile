@@ -2,9 +2,9 @@ FROM kamermans/jq:latest as jq
 
 FROM golang:1.10
 
-# gometalinter.v1
-RUN go get -u gopkg.in/alecthomas/gometalinter.v1 \
-  && gometalinter.v1 --install
+# gometalinter.v2
+RUN go get -u gopkg.in/alecthomas/gometalinter.v2 \
+  && gometalinter.v2 --install
 
 # gocov
 RUN go get -u github.com/axw/gocov/gocov
