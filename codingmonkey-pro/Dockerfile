@@ -72,7 +72,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 RUN mkdir -p /mnt/CodingMonkey/log \
     && mkdir -p /mnt/CodingMonkey/run \
     && mkdir -p /mnt/CodingMonkey/cache \
-    && mkdir -p /mnt/CodingMonkey/backup
+    && mkdir -p /mnt/CodingMonkey/backup \
+    && chmod a+rwx /mnt/CodingMonkey
 
 RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
