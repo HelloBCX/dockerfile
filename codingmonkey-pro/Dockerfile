@@ -72,7 +72,7 @@ RUN mkdir -p /mnt/CodingMonkey/log \
     && mkdir -p /mnt/CodingMonkey/run \
     && mkdir -p /mnt/CodingMonkey/cache \
     && mkdir -p /mnt/CodingMonkey/backup \
-    && chmod -R 777 /mnt/CodingMonkey
+    && chown -R www-data:www-data /mnt/CodingMonkey
 
 RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
